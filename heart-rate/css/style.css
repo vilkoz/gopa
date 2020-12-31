@@ -403,6 +403,9 @@ body.lock {
     margin: 0 -25vw 0 0;
   }
 }
+.top .button {
+  margin: 0 auto;
+}
 .top .dots {
   position: absolute;
   left: -165px;
