@@ -20,6 +20,9 @@ body {
   background: linear-gradient(164.59deg, #201335 14.04%, #03152B 51.05%, #2B0325 80%) no-repeat center;
   background-size: cover;
 }
+body.lock {
+  overflow: hidden;
+}
 
 .container {
   width: 100%;
@@ -28,7 +31,15 @@ body {
   margin-right: auto;
   padding: 0 20px;
 }
+@media only screen and (max-width: 767px) {
+  .container {
+    padding: 0 24px;
+  }
+}
 
+.main {
+  overflow-x: hidden;
+}
 .main__title {
   margin-top: 0;
   margin-bottom: 38px;
@@ -36,10 +47,24 @@ body {
   font-weight: 700;
   font-size: 36px;
   line-height: 44px;
+  text-transform: uppercase;
 }
 @media only screen and (max-width: 991px) {
   .main__title {
     font-size: 24px;
+  }
+}
+.main__subtitle {
+  margin-top: 0;
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 17px;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 991px) {
+  .main__subtitle {
+    font-size: 14px;
   }
 }
 
@@ -56,13 +81,16 @@ body {
 }
 
 .button {
+  display: block;
   height: 48px;
   min-width: 90px;
   width: 197px;
   text-align: center;
   font-weight: 600;
+  line-height: 48px;
   text-transform: uppercase;
   color: #ffffff;
+  text-decoration: none;
   background: none;
   border: none;
   border-radius: 15px;
@@ -219,14 +247,39 @@ body {
 .header__actions .button:not(:first-child) {
   margin-left: 18px;
 }
+.header__actions .button_signup .button__icon {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  .header__actions .button_signup {
+    display: flex;
+    min-width: 48px;
+    width: 48px;
+  }
+  .header__actions .button_signup .button__text {
+    display: none;
+  }
+  .header__actions .button_signup .button__icon {
+    display: block;
+    margin: auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .header__actions .button_login {
+    display: none;
+  }
+}
 @media only screen and (max-width: 767px) {
   .header__actions {
-    display: none;
+    margin-left: 0;
   }
 }
 .header__toggle {
   display: none;
   cursor: pointer;
+}
+.header__toggle img {
+  display: block;
 }
 @media only screen and (max-width: 767px) {
   .header__toggle {
@@ -236,7 +289,7 @@ body {
 @media only screen and (max-width: 767px) {
   .header {
     justify-content: space-between;
-    padding: 30px 24px;
+    padding: 18px 24px;
   }
 }
 
@@ -253,6 +306,8 @@ body {
 @media only screen and (max-width: 991px) {
   .top__grid {
     flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: center;
   }
 }
 .top__info {
@@ -276,6 +331,11 @@ body {
     max-width: 327px;
   }
 }
+@media only screen and (max-width: 460px) {
+  .top__info {
+    max-width: 100%;
+  }
+}
 .top__title-wrapper {
   position: relative;
   margin-bottom: 38px;
@@ -294,7 +354,7 @@ body {
 }
 @media only screen and (max-width: 991px) {
   .top__title-wrapper {
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 }
 .top__title {
@@ -310,6 +370,11 @@ body {
 }
 .top__text {
   margin-bottom: 38px;
+}
+@media only screen and (max-width: 560px) {
+  .top__text {
+    margin-bottom: 24px;
+  }
 }
 .top__img {
   width: 100%;
@@ -331,6 +396,13 @@ body {
     margin: 0 auto;
   }
 }
+@media only screen and (max-width: 460px) {
+  .top__img {
+    width: 135vw;
+    max-width: none;
+    margin: 0 -25vw 0 0;
+  }
+}
 .top .dots {
   position: absolute;
   left: -165px;
@@ -340,9 +412,126 @@ body {
 .top .dots img {
   display: block;
 }
+@media only screen and (max-width: 1300px) {
+  .top .dots {
+    left: -65px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .top .dots {
+    display: none;
+  }
+}
 @media only screen and (max-width: 991px) {
   .top {
     margin-bottom: 82px;
+  }
+}
+@media only screen and (max-width: 460px) {
+  .top {
+    margin-top: 40px;
+  }
+}
+
+.streams {
+  margin-bottom: 146px;
+}
+.streams .main__title {
+  margin-bottom: 38px;
+}
+@media only screen and (max-width: 600px) {
+  .streams .main__title {
+    margin-bottom: 24px;
+  }
+}
+.streams .main__subtitle {
+  margin-bottom: 56px;
+}
+@media only screen and (max-width: 600px) {
+  .streams .main__subtitle {
+    max-width: 235px;
+    margin: 0 auto 36px;
+    line-height: 28px;
+  }
+}
+.streams .carousel-wrapper {
+  width: 100%;
+  max-width: 1096px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media only screen and (max-width: 991px) {
+  .streams .carousel-wrapper {
+    padding: 0 0 0 18px;
+  }
+}
+.streams .streams-card {
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+.streams .streams-card__img {
+  width: 100%;
+}
+.streams .streams-card__img img {
+  display: block;
+}
+.streams .streams-card__info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px 0;
+}
+.streams .streams-card__info-avatar {
+  flex-shrink: 0;
+  width: 64px;
+  margin-right: 12px;
+  border-radius: 50%;
+}
+.streams .streams-card__info-avatar img {
+  display: block;
+}
+.streams .streams-card__info-wrapper {
+  flex-grow: 1;
+}
+.streams .streams-card__info-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 98%;
+  white-space: nowrap;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+@media only screen and (max-width: 991px) {
+  .streams .streams-card__info-title {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .streams .streams-card__info-event {
+    font-size: 12px;
+  }
+}
+.streams .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 44px auto 0;
+}
+.streams .button svg {
+  display: block;
+  width: 11px;
+  margin-left: 17px;
+  transform: rotate(-90deg);
+}
+@media only screen and (max-width: 600px) {
+  .streams .button {
+    display: none;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .streams {
+    margin-bottom: 74px;
   }
 }
 
@@ -425,6 +614,11 @@ body {
 .roadmap .main__title {
   margin-bottom: 92px;
 }
+@media only screen and (max-width: 767px) {
+  .roadmap .main__title {
+    margin-bottom: 40px;
+  }
+}
 .roadmap__grid {
   position: relative;
   margin-bottom: 150px;
@@ -438,9 +632,19 @@ body {
 .roadmap__grid .dots img {
   display: block;
 }
+@media only screen and (max-width: 1300px) {
+  .roadmap__grid .dots {
+    right: -65px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .roadmap__grid .dots {
+    display: none;
+  }
+}
 @media only screen and (max-width: 767px) {
   .roadmap__grid {
-    margin-bottom: 90px;
+    display: none;
   }
 }
 .roadmap__row {
@@ -479,6 +683,7 @@ body {
   position: relative;
   flex-shrink: 0;
   width: 100%;
+  height: 411px;
   max-width: 412px;
   margin-right: 7%;
   padding: 109px 0 61px;
@@ -494,6 +699,12 @@ body {
   font-size: 144px;
   color: #8322FF;
 }
+@media only screen and (max-width: 767px) {
+  .roadmap__card-number {
+    top: -7px;
+    font-size: 110px;
+  }
+}
 .roadmap__card-img {
   width: 100%;
   max-width: 308px;
@@ -505,8 +716,15 @@ body {
 }
 @media only screen and (max-width: 767px) {
   .roadmap__card {
+    height: 372px;
     margin: 0 auto 36px;
-    padding: 109px 20px 61px;
+    padding: 86px 30px 48px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .roadmap__card {
+    height: 326px;
+    padding: 86px 40px 48px;
   }
 }
 .roadmap__info {
@@ -521,12 +739,38 @@ body {
   margin-bottom: 38px;
 }
 @media only screen and (max-width: 767px) {
+  .roadmap__info-text {
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (max-width: 767px) {
   .roadmap__info {
     max-width: 412px;
   }
   .roadmap__info .button {
     display: block;
     margin: 0 auto;
+  }
+}
+.roadmap .roadmap__carousel {
+  display: none;
+}
+.roadmap .roadmap__carousel .swiper-pagination-bullets {
+  bottom: 0 !important;
+}
+.roadmap .roadmap__carousel .swiper-pagination-bullet {
+  outline: none;
+  opacity: 0.2;
+  background-color: #ffffff;
+}
+.roadmap .roadmap__carousel .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+@media only screen and (max-width: 767px) {
+  .roadmap .roadmap__carousel {
+    display: block;
+    margin-bottom: 20px;
+    padding: 40px 0 50px;
   }
 }
 
@@ -557,6 +801,32 @@ body {
     text-align: center;
   }
 }
+@media only screen and (max-width: 767px) {
+  .devices__info .main__title {
+    max-width: 185px;
+    margin: 0 auto 24px;
+    line-height: 29px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .devices__info {
+    max-width: 581px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .devices__info .button {
+    display: none;
+  }
+}
+.devices .button_mobile {
+  display: none;
+}
+@media only screen and (max-width: 991px) {
+  .devices .button_mobile {
+    display: block;
+    margin: 36px auto 0;
+  }
+}
 .devices__name {
   margin-bottom: 18px;
   font-size: 24px;
@@ -564,6 +834,11 @@ body {
 @media only screen and (max-width: 991px) {
   .devices__name {
     font-size: 18px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .devices__name {
+    margin-bottom: 24px;
   }
 }
 .devices__text {
@@ -624,7 +899,7 @@ body {
 }
 @media only screen and (max-width: 991px) {
   .devices__carousel {
-    margin: 40px auto 0 !important;
+    margin: 0 auto !important;
     padding-bottom: 20px !important;
   }
 }
@@ -649,6 +924,16 @@ body {
 .registration__grid .dots img {
   display: block;
 }
+@media only screen and (max-width: 1300px) {
+  .registration__grid .dots {
+    left: -65px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .registration__grid .dots {
+    display: none;
+  }
+}
 .registration__card {
   width: 100%;
   max-width: 412px;
@@ -659,11 +944,35 @@ body {
   border-radius: 42px;
   box-shadow: 0 0 100px rgba(23, 0, 60, 0.5);
 }
+.registration__card .button {
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-width: 991px) {
+  .registration__card .main__title {
+    max-width: 206px;
+    margin: 0 auto 24px;
+    line-height: 29px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .registration__card {
+    max-width: 323px;
+    padding: 67px 20px;
+  }
+}
 .registration__text {
   width: 100%;
   max-width: 265px;
   margin: 0 auto 38px;
   font-size: 18px;
+}
+@media only screen and (max-width: 991px) {
+  .registration__text {
+    max-width: 206px;
+    margin: 0 auto 24px;
+    font-size: 14px;
+  }
 }
 @media only screen and (max-width: 991px) {
   .registration {
@@ -800,7 +1109,6 @@ body {
 }
 @media only screen and (max-width: 550px) {
   .footer__title {
-    margin-bottom: 0;
     font-size: 18px;
   }
 }
@@ -817,6 +1125,7 @@ body {
 @media only screen and (max-width: 550px) {
   .footer__menu {
     width: 100%;
+    margin-bottom: 26px;
   }
 }
 .footer__contacts .link {
@@ -948,6 +1257,9 @@ body {
   display: block;
   width: 42px;
   margin: 0 13px;
+}
+.menu-mob__body-list {
+  width: 100%;
 }
 .menu-mob.open {
   transform: translateX(0);

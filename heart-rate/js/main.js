@@ -62,10 +62,58 @@ var carouselArticles = new Swiper('.articles__carousel', {
     }
 });
 
+var carouselStreams = new Swiper('.streams__carousel', {
+    loop: true,
+    spaceBetween: 18,
+    slidesPerView: 3,
+    breakpoints: {
+        320: {
+            slidesPerView: 1.18,
+        },
+        450: {
+            slidesPerView: 1.4,
+        },
+        601: {
+            slidesPerView: 2.2,
+        },
+        992: {
+            slidesPerView: 3,
+        }
+    }
+});
+
+var carouselRoadmap = new Swiper('.roadmap__carousel', {
+    loop: true,
+    spaceBetween: 18,
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+});
+
 $('.header__toggle').click(function() {
     $('.menu-mob').addClass('open');
+    $('body').addClass('lock');
 });
 
 $('.menu-mob__close').click(function() {
     $('.menu-mob').removeClass('open');
+    $('body').removeClass('lock');
 })
+
+$('.menu-mob .link').click(function() {
+    $('.menu-mob').removeClass('open');
+    $('body').removeClass('lock');
+})
+
+$(document).ready(function(){
+    $('a[href^="#"]').on('click',function (e) {
+        e.preventDefault();
+        var target = this.hash;
+        var $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+        }, 900, 'swing', function () {});
+    });
+});

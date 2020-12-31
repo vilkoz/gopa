@@ -19,19 +19,24 @@
     <div class="header__logo logo">logo</div>
 
     <div class="header__menu">
-        <a href="#" class="header__menu-item">home</a>
-        <a href="#" class="header__menu-item">about</a>
-        <a href="#" class="header__menu-item">articles</a>
+        <a href="#home" class="header__menu-item">home</a>
+        <a href="#about" class="header__menu-item">about</a>
+        <a href="#articles" class="header__menu-item">articles</a>
     </div>
 
     <div class="header__actions">
-        <button class="button button_default">sign up</button>
-        <button class="button button_secondary">logn in</button>
+        <a href="#" class="button button_default button_signup">
+            <span class="button__text">sign up</span>
+            <img class="button__icon" src="img/user.svg" alt="">
+        </a>
+        <a href="#" class="button button_secondary button_login">
+            <span>logn in</span>
+        </a>
     </div>
 </header>
 
 <main class="main">
-    <section class="top">
+    <section class="top" id="home">
         <div class="container">
             <div class="top__grid">
                 <div class="top__info">
@@ -53,7 +58,66 @@
         </div>
     </section>
 
-    <section class="about">
+    <section class="streams">
+        <div class="container">
+            <h2 class="main__title">WHO USING</h2>
+            <h3 class="main__subtitle">STREAMERS USING OUR WIDGET NOW</h3>
+        </div>
+
+        <div class="carousel-wrapper">
+            <div class="streams__carousel swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="streams-card">
+                            <div class="streams-card__img"><img src="img/stream_1.jpg" alt="" width="100%"></div>
+                            <div class="streams-card__info">
+                                <div class="streams-card__info-avatar"><img src="img/stream_avatar.png" alt="" width="100%"></div>
+                                <div class="streams-card__info-wrapper">
+                                    <div class="streams-card__info-title">Espada 0:1 Movistar Riders</div>
+                                    <div class="streams-card__info-event">Season 1 by MintGod</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="streams-card">
+                            <div class="streams-card__img"><img src="img/stream_2.jpg" alt="" width="100%"></div>
+                            <div class="streams-card__info">
+                                <div class="streams-card__info-avatar"><img src="img/stream_avatar.png" alt="" width="100%"></div>
+                                <div class="streams-card__info-wrapper">
+                                    <div class="streams-card__info-title">Espada 0:1 Movistar Riders</div>
+                                    <div class="streams-card__info-event">Season 1 by MintGod</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="streams-card">
+                            <div class="streams-card__img"><img src="img/stream_3.jpg" alt="" width="100%"></div>
+                            <div class="streams-card__info">
+                                <div class="streams-card__info-avatar"><img src="img/stream_avatar.png" alt="" width="100%"></div>
+                                <div class="streams-card__info-wrapper">
+                                    <div class="streams-card__info-title">Espada 0:1 Movistar Riders</div>
+                                    <div class="streams-card__info-event">Season 1 by MintGod</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" class="button button_secondary">
+            <span>MORE STREAMS</span>
+            <svg width="17" height="32" viewBox="0 0 17 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 31L1 16L16 1" stroke="white" stroke-width="3" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </section>
+
+    <section class="about" id="about">
         <div class="container">
             <h2 class="main__title">WHO WE ARE?</h2>
 
@@ -138,6 +202,65 @@
 
                 <div class="dots"><img src="img/dots.svg" alt="" width="100%"></div>
             </div>
+
+            <div class="roadmap__carousel swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="roadmap__row">
+                            <div class="roadmap__card">
+                                <div class="roadmap__card-number">01</div>
+                                <div class="roadmap__card-img roadmap__card-img_1"><img src="img/htc_infographics.svg" alt="" width="100%"></div>
+                            </div>
+
+                            <div class="roadmap__info">
+                                <div class="roadmap__info-title">SIGN UP</div>
+                                <div class="roadmap__info-text">
+                                    Lorem ipsum dollor sit  amet,  consectetur
+                                    adipiscing elit, sed do eiusmod ad tempor
+                                    incididunt ut labore et dolore magna aliqua. Ute enim ad  nisip minim  veniamu, nostrud exercitation  ullamco  laboris  nisil ut  aliquip ex  ea  commo  consequatet.
+                                </div>
+                                <button class="button button_default">sign up</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="roadmap__row roadmap__row_right">
+                            <div class="roadmap__info">
+                                <div class="roadmap__info-title">HOW TO CONNECT</div>
+                                <div class="roadmap__info-text">
+                                    Lorem ipsum dollor sit  amet,  consectetur
+                                    adipiscing elit, sed do eiusmod ad tempor
+                                    incididunt ut labore et dolore magna aliqua. Ute enim ad  nisip minim  veniamu, nostrud exercitation  ullamco  laboris  nisil ut  aliquip ex  ea  commo  consequatet.
+                                </div>
+                            </div>
+
+                            <div class="roadmap__card">
+                                <div class="roadmap__card-number">02</div>
+                                <div class="roadmap__card-img"><img src="img/htc_infographics.svg" alt="" width="100%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="roadmap__row">
+                            <div class="roadmap__card">
+                                <div class="roadmap__card-number">03</div>
+                                <div class="roadmap__card-img"><img src="img/hsuow_infographics.svg" alt="" width="100%"></div>
+                            </div>
+
+                            <div class="roadmap__info">
+                                <div class="roadmap__info-title">HOW SET UP OBS WIDGET</div>
+                                <div class="roadmap__info-text">
+                                    Lorem ipsum dollor sit  amet,  consectetur
+                                    adipiscing elit, sed do eiusmod ad tempor
+                                    incididunt ut labore et dolore magna aliqua. Ute enim ad  nisip minim  veniamu, nostrud exercitation  ullamco  laboris  nisil ut  aliquip ex  ea  commo  consequatet.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -150,7 +273,7 @@
                     <div class="devices__text">
                         Lorem ipsum dolor sit amet, consectetur adipiscin elit, sed do eiusmod tempor incididuntlabore et dolore magna aliqua. Ut enim ad minim veniam, nostrud exercitation.
                     </div>
-                    <button class="button button_default">sign up</button>
+                    <a href="#" class="button button_default">ALL DEVICES</a>
                 </div>
 
                 <div class="devices__carousel swiper-container">
@@ -196,6 +319,8 @@
                         </svg>
                     </div>
                 </div>
+
+                <a href="#" class="button button_default button_mobile">ALL DEVICES</a>
             </div>
         </div>
     </section>
@@ -214,7 +339,7 @@
         </div>
     </section>
 
-    <section class="articles">
+    <section class="articles" id="articles">
         <div class="container">
             <h2 class="main__title">ARTICLES</h2>
 
@@ -267,37 +392,21 @@
             <div class="footer__logo logo">logo</div>
 
             <div class="footer__menu">
-                <div class="collapse">
-                    <div class="collapse__head open">
-                        <span class="footer__title">MENU</span>
-                        <div class="arrow">
-                            <svg viewBox="0 0 17 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16 31L1 16L16 1" stroke="white" stroke-width="3" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="collapse__body open">
-                        <a href="#" class="link">HOME</a>
-                        <a href="#" class="link">ABOUT</a>
-                        <a href="#" class="link">ARTICLES</a>
-                    </div>
+                <div class="footer__title">MENU</div>
+
+                <div class="footer__menu-list">
+                    <a href="#home" class="link">HOME</a>
+                    <a href="#about" class="link">ABOUT</a>
+                    <a href="#articles" class="link">ARTICLES</a>
                 </div>
             </div>
 
             <div class="footer__contacts">
-                <div class="collapse">
-                    <div class="collapse__head open">
-                        <span class="footer__title">CONTACTS</span>
-                        <div class="arrow">
-                            <svg viewBox="0 0 17 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16 31L1 16L16 1" stroke="white" stroke-width="3" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="collapse__body open">
-                        <a href="tel:+380978674" class="link">+380978674</a>
-                        <a href="mailto:email@gmail.com" class="link">email@gmail.com</a>
-                    </div>
+                <div class="footer__title">CONTACTS</div>
+
+                <div class="footer__contacts-list">
+                    <a href="tel:+380978674" class="link">+380978674</a>
+                    <a href="mailto:email@gmail.com" class="link">email@gmail.com</a>
                 </div>
             </div>
 
@@ -333,9 +442,9 @@
                         </div>
                     </div>
                     <div class="collapse__body open">
-                        <a href="#" class="link">HOME</a>
-                        <a href="#" class="link">ABOUT</a>
-                        <a href="#" class="link">ARTICLES</a>
+                        <a href="#home" class="link">HOME</a>
+                        <a href="#about" class="link">ABOUT</a>
+                        <a href="#articles" class="link">ARTICLES</a>
                     </div>
                 </div>
 
